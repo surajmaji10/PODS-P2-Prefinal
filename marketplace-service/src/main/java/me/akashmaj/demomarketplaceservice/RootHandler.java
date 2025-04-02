@@ -3,14 +3,12 @@ package me.akashmaj.demomarketplaceservice;
 import akka.actor.typed.ActorRef;
 import akka.actor.typed.ActorSystem;
 import akka.actor.typed.Scheduler;
-import akka.actor.typed.javadsl.AskPattern;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.time.Duration;
-import java.util.concurrent.CompletionStage;
 
 class RootHandler implements HttpHandler {
 
