@@ -1,0 +1,83 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: marketplace-service
+#   labels:
+#     app: marketplace-service
+# spec:
+#   replicas: 1  # You can adjust the number of replicas as needed
+#   selector:
+#     matchLabels:
+#       app: marketplace-service
+#   template:
+#     metadata:
+#       labels:
+#         app: marketplace-service
+#     spec:
+#       containers:
+#         - name: marketplace-service
+#           image: marketplace-service:1.0
+#           env:
+#             - name: K8S_POD_NAME
+#               valueFrom:
+#                 fieldRef:
+#                   fieldPath: metadata.name  # Automatically gets the pod name
+#             - name: K8S_SERVICE_HOST
+#               value: "marketplace-service"  # Replace with your Kubernetes service name
+#           ports:
+#             - containerPort: 8080
+
+apiVersion: apps/v1  
+kind: Deployment  
+metadata:  
+  name: marketplace-service  
+  labels:  
+    app: marketplace-service  
+spec:  
+  replicas: 1  
+  strategy:  
+    type: RollingUpdate  
+  selector:  
+    matchLabels:  
+      app: marketplace-service  
+  template:  
+    metadata:  
+      labels:  
+        app: marketplace-service  
+    spec:  
+      containers:  
+        - name: marketplace-service  
+          image: marketplace-service:1.0  
+          imagePullPolicy: IfNotPresent  
+          env:  
+            - name: K8S_POD_IP  
+              valueFrom:  
+                fieldRef:  
+                  fieldPath: status.podIP  
+            - name: K8S_POD_NAME  
+              valueFrom:  
+                fieldRef:  
+                  fieldPath: metadata.name  
+            - name: K8S_SERVICE_HOST  
+              value: "marketplace-service"    
+          ports:  
+            - containerPort: 8080  
+          readinessProbe:  
+            httpGet:  
+              path: /actuator/health  
+              port: 8080  
+            initialDelaySeconds: 15  
+            periodSeconds: 10  
+          livenessProbe:  
+            httpGet:  
+              path: /actuator/health  
+              port: 8080  
+            initialDelaySeconds: 30  
+            periodSeconds: 15  
+          resources:  
+            requests:  
+              memory: "512Mi"  
+              cpu: "500m"  
+            limits:  
+              memory: "1Gi"  
+              cpu: "1"  

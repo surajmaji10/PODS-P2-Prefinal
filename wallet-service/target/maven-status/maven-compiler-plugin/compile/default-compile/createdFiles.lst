@@ -1,0 +1,9 @@
+pods/project/walletservice/entities/Wallet.class
+pods/project/walletservice/controllers/HelloController.class
+pods/project/walletservice/repositories/WalletRepository.class
+pods/project/walletservice/CustomException/BadRequestException.class
+pods/project/walletservice/CustomException/WalletNotExistsException.class
+pods/project/walletservice/services/WalletService.class
+pods/project/walletservice/WalletServiceApplication.class
+pods/project/walletservice/controllers/WalletController.class
+pods/project/walletservice/CustomException/InsufficientBalanceException.class

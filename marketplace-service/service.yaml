@@ -1,0 +1,32 @@
+# apiVersion: v1  
+# kind: Service  
+# metadata:  
+#   name: marketplace-service  
+# spec:  
+#   ports:  
+#     - port: 8080  # Expose the same port as Akka expects  
+#       targetPort: 8080  # Map to container port  
+#   selector:  
+#     app: marketplace-service  
+
+# service.yaml  
+apiVersion: v1  
+kind: Service  
+metadata:  
+  name: marketplace-service  
+  labels:  
+    app: marketplace-service  
+spec:  
+  ports:  
+    - name: management  
+      port: 8558  
+      targetPort: 8558  
+    - name: akka-remote  
+      port: 2552  
+      targetPort: 2552  
+    - name: http  
+      port: 8080  
+      targetPort: 8080  
+  selector:  
+    app: marketplace-service  
+  clusterIP: None  # Headless service for direct pod DNS   

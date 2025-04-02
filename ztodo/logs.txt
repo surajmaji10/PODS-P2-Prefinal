@@ -1,0 +1,132 @@
+[INFO] 
+[INFO] --- maven-clean-plugin:3.4.1:clean (default-clean) @ demo-marketplace-service ---
+[INFO] Deleting /home/akash/Desktop/PODS-P2/marketplace-service/target
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.240 s
+[INFO] Finished at: 2025-04-01T22:06:51+05:30
+[INFO] ------------------------------------------------------------------------
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< me.akashmaj:demo-marketplace-service >----------------
+[INFO] Building demo-marketplace-service 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ demo-marketplace-service ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:compile (default-compile) @ demo-marketplace-service ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 9 source files with javac [debug parameters release 17] to target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.327 s
+[INFO] Finished at: 2025-04-01T22:06:54+05:30
+[INFO] ------------------------------------------------------------------------
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< me.akashmaj:demo-marketplace-service >----------------
+[INFO] Building demo-marketplace-service 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:3.5.0:java (default-cli) @ demo-marketplace-service ---
+local
+22:06:56.269 [DemoMarketplaceServiceApplication-akka.actor.default-dispatcher-3] INFO akka.event.slf4j.Slf4jLogger -- Slf4jLogger started
+22:06:56.357 [Gateway-akka.actor.default-dispatcher-3] INFO akka.event.slf4j.Slf4jLogger -- Slf4jLogger started
+Products Populated SuccessfullyCreated Product ID: 101
+Product Stock: 10
+Created Product ID: 102
+Product Stock: 8
+Created Product ID: 103
+Product Stock: 15
+Created Product ID: 104
+Product Stock: 20
+Created Product ID: 105
+Product Stock: 12
+Created Product ID: 106
+Product Stock: 5
+Created Product ID: 107
+Product Stock: 25
+Created Product ID: 108
+Product Stock: 18
+Created Product ID: 109
+Product Stock: 10
+Created Product ID: 110
+Product Stock: 7
+Created Product ID: 111
+Product Stock: 12
+Created Product ID: 112
+Product Stock: 16
+Created Product ID: 113
+Product Stock: 9
+Created Product ID: 114
+Product Stock: 4
+Created Product ID: 115
+Product Stock: 6
+Created Product ID: 116
+Product Stock: 3
+Created Product ID: 117
+Product Stock: 10
+Created Product ID: 118
+Product Stock: 14
+Created Product ID: 119
+Product Stock: 8
+Created Product ID: 120
+Product Stock: 15
+MyProductsHandler PATH: /products/104
+MyProductsHandler PATH Length: 3
+104
+onGetProduct
+INSIDE
+MyOrdersHandler PATH: /orders
+MyOrdersHandler PATH Length: 2
+1 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+User ID: 101
+Items to Order: [{product_id=104, quantity=2}]
+_____________________________________________________
+PLACE ORDER ITEMS: for orderID: 2223
+_____________________________________________________
+{"userId":101,"itemsToOrder":[{"product_id":104,"quantity":2,"id":4444}],"replyTo":{"terminated":false,"local":true}}
+_____________________________________________________
+Product ID => 104
+Quantity => 2
+onUpdateProduct
+20
+18
+INSIDE
+> CURRENT STOCK for Product 104 on orderID:2223 => 18
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+PLACEABLE: true
+CHECK URL: http://localhost:8080/users/101
+{"discount_availed":false,"name":"John Doe","id":101,"email":"johndoe@mail.com"}
+User exists
+CHECK URL: http://localhost:8082/wallets/101
+{"balance":10000,"user_id":101}
+Wallet exists
+CHECK URL: http://localhost:8082/wallets/101
+CHECK URL: http://localhost:8080/users/101
+Discount availed: false
+{"discount_availed":false,"name":"John Doe","id":101,"email":"johndoe@mail.com"}
+CHECK URL: http://localhost:8082/wallets/101
+CHECK URL: http://localhost:8080/users
+Order is placeable
+Order placed ......
+Creating order actor
+_____________________________________________________
+PLACE ORDER ITEMS: for orderID: 2223
+_____________________________________________________
+{"orderId":2223,"userId":101,"totalOrderPrice":1260,"itemsToOrder":[{"product_id":104,"quantity":2,"id":4444}],"replyTo":{"terminated":false,"local":true}}
+_____________________________________________________
+Actor[akka://Gateway/user/PostOrderActor/order-2223#-1762717592]
+INIT
+SAVED TO STATE
+GOT:
+{"order_id":2223,"user_id":101,"status":"PLACED","total_price":1260,"items":[{"product_id":104,"quantity":2,"id":4444}]}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Processing response for Order ID: 2223
+Response Count Before: 0
+Response Count After: 1
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

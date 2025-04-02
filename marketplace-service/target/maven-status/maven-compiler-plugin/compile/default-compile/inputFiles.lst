@@ -1,0 +1,12 @@
+/home/akash/Desktop/PODS-P2/marketplace-service/src/main/java/me/akashmaj/demomarketplaceservice/API.java
+/home/akash/Desktop/PODS-P2/marketplace-service/src/main/java/me/akashmaj/demomarketplaceservice/Color.java
+/home/akash/Desktop/PODS-P2/marketplace-service/src/main/java/me/akashmaj/demomarketplaceservice/DeleteOrder.java
+/home/akash/Desktop/PODS-P2/marketplace-service/src/main/java/me/akashmaj/demomarketplaceservice/DemoMarketplaceServiceApplication.java
+/home/akash/Desktop/PODS-P2/marketplace-service/src/main/java/me/akashmaj/demomarketplaceservice/Gateway.java
+/home/akash/Desktop/PODS-P2/marketplace-service/src/main/java/me/akashmaj/demomarketplaceservice/MarketplaceHandler.java
+/home/akash/Desktop/PODS-P2/marketplace-service/src/main/java/me/akashmaj/demomarketplaceservice/MyOrderHandler.java
+/home/akash/Desktop/PODS-P2/marketplace-service/src/main/java/me/akashmaj/demomarketplaceservice/MyProductsHandler.java
+/home/akash/Desktop/PODS-P2/marketplace-service/src/main/java/me/akashmaj/demomarketplaceservice/Order.java
+/home/akash/Desktop/PODS-P2/marketplace-service/src/main/java/me/akashmaj/demomarketplaceservice/PostOrder.java
+/home/akash/Desktop/PODS-P2/marketplace-service/src/main/java/me/akashmaj/demomarketplaceservice/Product.java
+/home/akash/Desktop/PODS-P2/marketplace-service/src/main/java/me/akashmaj/demomarketplaceservice/ProductsPopulator.java

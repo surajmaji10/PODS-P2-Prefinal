@@ -1,0 +1,21 @@
+docker build -t account-service .
+docker build -t marketplace-service .
+docker build -t wallet-service .
+
+
+docker run -p 8080:8080 --rm --name account-service \
+                        --add-host=host.docker.internal:host-gateway \
+                        account-service &
+
+docker run -p 8081:8080 --rm --name marketplace-service \
+                        --add-host=host.docker.internal:host-gateway \
+                        marketplace-service &
+
+docker run -p 8082:8080 --rm --name wallet-service \
+                        --add-host=host.docker.internal:host-gateway \
+                        wallet-service &
+
+
+docker stop account-service marketplace-service wallet-service
+
+docker rmi account-service marketplace-service wallet-service
